@@ -17,7 +17,7 @@ function show() { if (!win) return; if (win.isMinimized()) win.restore(); win.sh
 function toggle() { if (win?.isVisible() && win.isFocused()) win.hide(); else show(); }
 async function catalog(refresh = false) {
   if (refresh || !current.skills.length) {
-    if (!scanning) scanning = scanSkills(roots).then(value => { current = value; }).finally(() => { scanning = null; });
+    if (!scanning) scanning = scanSkills(roots,{home:testMode?process.env.FOLIO_TEST_HOME:os.homedir(),xdgStateHome:testMode?undefined:process.env.XDG_STATE_HOME}).then(value => { current = value; }).finally(() => { scanning = null; });
     await scanning;
   }
   return { ...current, saved: await store.read(), roots, shortcutReady, dataPath: app.getPath('userData') };

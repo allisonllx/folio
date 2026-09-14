@@ -14,7 +14,7 @@ test('catalog follows symlinks without cycles, merges identical files, and retai
  await skill(root,'copy','---\nname: writer\ndescription: >-\n  Write polished\n  articles and prose.\n---\n# Instructions\nWrite clearly.');
  await skill(root,'conflict','---\nname: writer\ndescription: Different writing method\n---\nSomething else');
  await skill(root,'node_modules/ignored','---\nname: ignored\n---\nNo');
- await fs.symlink(root,path.join(a,'cycle')); await fs.symlink(a,path.join(root,'alias'));
+ await fs.symlink(root,path.join(root,'cycle')); await fs.symlink(a,path.join(root,'alias'));
  const out=await scanSkills([root]); assert.equal(out.skills.length,2);
  const merged=out.skills.find(s=>s.body.includes('Write clearly.'));
  assert.equal(merged.name,'writer'); assert.equal(merged.description,'Write polished articles and prose.');
@@ -68,4 +68,17 @@ test('store serializes concurrent updates without losing metadata', async t=>{
  const dir=await sandbox(t), store=createStore(path.join(dir,'state.json'));
  await Promise.all([store.updateSkill('abc',{favorite:true}),store.updateSkill('def',{notes:'Keep'})]);
  assert.equal(Object.keys((await store.read()).skills).length,2);
+});
+test('relationship labels are explicit, validated and preserve existing library metadata', async t=>{
+ const dir=await sandbox(t), file=path.join(dir,'state.json'), store=createStore(file);
+ await store.updateSkill('existing',{notes:'Keep my notes',favorite:true});
+ assert.equal((await store.read()).skills.existing.relationship,undefined);
+ for(const relationship of ['auto','created','adapted','installed','unclassified']) {
+  await store.updateSkill('existing',{relationship});
+  const saved=(await createStore(file).read()).skills.existing;
+  assert.equal(saved.relationship,relationship);
+  assert.equal(saved.notes,'Keep my notes'); assert.equal(saved.favorite,true);
+ }
+ for(const relationship of ['github','',null,{},true]) await assert.rejects(store.updateSkill('existing',{relationship}));
+ assert.equal((await store.read()).skills.existing.relationship,'unclassified');
 });

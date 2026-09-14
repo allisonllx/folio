@@ -8,6 +8,8 @@ Help users rediscover installed capabilities. Work stays in Codex/Cursor; Folio 
 ## Current implementation
 - Read-only scanner for ~/.agents/skills, ~/.codex/skills, ~/.codex/plugins/cache, ~/.claude/skills.
 - Editable keyword-based shelves, search, favorites, source viewing, copied starter prompts.
+- Automatic unchanged classification from Skills CLI v3 Git tree hashes or matching local Codex bundled sources; changes suggest adaptation, unknown evidence stays unclassified. Manual labels win. Scans on startup, Refresh, and window refocus after ten seconds.
+- User-assigned skill types: created, adapted, installed unchanged, and unclassified, with a library filter. Folder source labels do not infer authorship.
 - Local notes and manually entered run reviews, stored in Electron userData/library.json.
 - Menu-bar access and Control+Option+K while running.
 - No runtime network requests, source skill modification, automatic conversation capture or GitHub publishing.
