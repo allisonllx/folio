@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/icon.png" alt="Folio bookshelf logo" width="120" height="120">
+  <img src="assets/icon.png" alt="Folio bookshelf logo" width="200" height="200">
 </p>
 
 <h1 align="center">Folio</h1>
