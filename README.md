@@ -1,6 +1,10 @@
-# Folio
+<p align="center">
+  <img src="assets/icon.png" alt="Folio bookshelf logo" width="120" height="120">
+</p>
 
-A small, local macOS bookshelf for agent skills. Browse what is on your machine, copy a starter prompt into your agent, and keep personal notes and run reviews beside each skill.
+<h1 align="center">Folio</h1>
+
+<p align="center">A cozy macOS bookshelf to rediscover your agent skills and keep what you learn beside them.</p>
 
 ![Folio’s bookshelf showing categorized agent skills, search, and skill-type filters](docs/screenshots/library.png)
 
