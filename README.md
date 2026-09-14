@@ -2,6 +2,10 @@
 
 A small, local macOS bookshelf for agent skills. Browse what is on your machine, copy a starter prompt into your agent, and keep personal notes and run reviews beside each skill.
 
+![Folio’s bookshelf showing categorized agent skills, search, and skill-type filters](docs/screenshots/library.png)
+
+*Rediscover installed skills on shelves, with search and filters to find what you need.*
+
 ## Download and open
 
 Download [Folio for Apple Silicon Macs](https://github.com/allisonllx/folio/releases/latest/download/Folio-macOS-arm64.zip) from [GitHub Releases](https://github.com/allisonllx/folio/releases/latest). Unzip it, move `Folio.app` to Applications, and open it. No Node.js or terminal is needed to use the downloaded app.
@@ -21,6 +25,14 @@ This preview build is not signed or notarized; macOS may block it on first launc
 3. Copy a starter prompt, paste it in Codex or another agent on this Mac, and replace the task placeholder.
 4. Bookmark the skill or change its shelf. Save personal notes separately from the original skill.
 5. After useful work, add a manual run review: intention, iterations, lesson and output/session reference.
+
+## A closer look
+
+<img src="docs/screenshots/skill-details.png" alt="A skill’s Overview showing verified installation evidence, an editable shelf, and private margin notes" width="720">
+
+*Open a book to check its origin, organize it, and keep notes. Run reviews and instructions are one tab away.*
+
+The screenshots show an example local library; skills are not bundled with Folio.
 
 ## Local data and sources
 
