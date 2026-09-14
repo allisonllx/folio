@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'none'"><title>Folio — Your skill library</title><link rel="stylesheet" href="style.css"></head>
+<body>
+  <aside class="sidebar">
+    <div class="traffic-space"></div>
+    <a class="brand" href="#" aria-label="Folio home"><span class="brand-icon">f.</span><span>folio<span class="brand-dot">.</span></span></a>
+    <p class="brand-caption">A home for what you can do.</p>
+    <nav aria-label="Library navigation"><button class="nav-item active" data-view="all"><span>▤</span> All skills <small id="all-count"></small></button><button class="nav-item" data-view="favorites" aria-label="Favorites"><span>♡</span> Favorites <small id="fav-count"></small></button><button class="nav-item" data-view="reviews"><span>✎</span> With run reviews <small id="review-count"></small></button></nav>
+    <div class="nav-label">YOUR SHELVES <span>↙</span></div><nav id="categories" aria-label="Shelves"></nav>
+    <div class="sidebar-bottom"><div class="local-dot"></div><span>Just here, on your Mac</span><button id="about-button">Library details <span>↗</span></button></div>
+  </aside>
+  <div class="workspace"><header class="topbar"><span id="breadcrumb">Your library <span>/</span> All skills</span><div class="top-actions"><span class="shortcut" id="shortcut-label">⌃ ⌥ K to open</span><button id="refresh-button" title="Rescan installed skills">↻ <span>Refresh</span></button></div></header>
+  <main>
+    <section class="intro"><div><div class="eyebrow">COLLECTED POSSIBILITIES</div><h1 id="page-title">A little library.<br>A lot of possibilities.</h1><p id="page-description">Rediscover what your agent can do. Pick a book and begin.</p></div><div class="illustration" aria-hidden="true"><div class="sun">✳</div><div class="vase"><span>⌁</span></div><div class="mini-book b1"></div><div class="mini-book b2"></div><div class="mini-book b3"></div><div class="mini-shelf"></div><span class="illustration-note">good things, collected.</span></div></section>
+    <section class="search-row"><div class="search-wrap"><span>⌕</span><input id="search" type="search" aria-label="Search skills" placeholder="Find a skill or something you want to do…"><kbd>⌘ K</kbd></div><button id="surprise-button">✧ Pick a book for me</button></section>
+    <div class="collection-meta"><span id="result-count">Opening your library…</span><span>Suggested shelves · yours to rearrange</span></div>
+    <div id="warnings" hidden></div><div id="shelves" aria-live="polite"></div>
+    <footer>Every skill starts with a possibility.<span>Make something worth keeping.</span></footer>
+  </main></div>
+  <dialog id="book-dialog" aria-labelledby="detail-title"><div id="detail-content"></div></dialog>
+  <dialog id="about-dialog" aria-labelledby="about-title"><button class="close-dialog" data-close="about-dialog" aria-label="Close library details">×</button><div class="eyebrow">YOUR LOCAL LIBRARY</div><h2 id="about-title">A small place for big possibilities.</h2><p>Folio reads your local skill files. Your favorites, shelves, notes and run reviews stay on this Mac. Your original skills are never changed.</p><h3>Opening Folio</h3><p id="shortcut-details"></p><p>Close the window to keep Folio in the menu bar. Use Folio → Quit to stop it. Launch at login is not enabled automatically.</p><h3>Where we look</h3><div id="roots-list"></div><p>Plugin caches can include inactive copies. Finding a file does not confirm that your agent has enabled it. “Personal” means a personal skill folder, not necessarily a skill you authored.</p><h3>Where your notes live</h3><code id="data-path"></code><p class="muted">Shelves are suggested using keywords. Run reviews are your own records, not automatically captured sessions or quality scores.</p></dialog>
+  <div id="toast" role="status" hidden></div>
+  <script src="app.js"></script>
+</body></html>

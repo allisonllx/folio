@@ -1,0 +1,21 @@
+{
+  "name": "folio-skill-library",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A personal bookshelf for your agent skills",
+  "main": "main.cjs",
+  "scripts": {
+    "start": "electron .",
+    "test": "node --test tests/backend.test.cjs",
+    "test:ui": "node tests/ui.cjs",
+    "package": "electron-packager . Folio --platform=darwin --arch=arm64 --out=release --overwrite --ignore='^/(release|tests|docs|work)($|/)' --icon=assets/icon.icns"
+  },
+  "devDependencies": {
+    "@electron/packager": "^20.3.0",
+    "electron": "^44.3.0",
+    "playwright": "^1.63.0"
+  },
+  "dependencies": {
+    "yaml": "^2.9.1"
+  }
+}
