@@ -2,9 +2,11 @@
 
 A small, local macOS bookshelf for agent skills. Browse what is on your machine, copy a starter prompt into your agent, and keep personal notes and run reviews beside each skill.
 
-## Open
+## Download and open
 
-Open `release/Folio-darwin-arm64/Folio.app`. This build targets Apple Silicon Macs. Keep it in the Dock if useful, or move the app to your Applications folder yourself.
+Download [Folio for Apple Silicon Macs](https://github.com/allisonllx/folio/releases/latest/download/Folio-macOS-arm64.zip) from [GitHub Releases](https://github.com/allisonllx/folio/releases/latest). Unzip it, move `Folio.app` to Applications, and open it. No Node.js or terminal is needed to use the downloaded app.
+
+This preview build is not signed or notarized; macOS may block it on first launch. Intel Macs and Windows are not supported by this download. Keep Folio in the Dock if useful.
 
 - **Control + Option + K:** show/hide Folio while it is running.
 - **Command + K:** focus search inside Folio.
@@ -54,7 +56,9 @@ User metadata is saved in `~/Library/Application Support/Folio/library.json`. Li
 
 ## Develop
 
-Requires Node.js and npm. Run `npm ci`, then `npm start`.
+Requires Node.js and npm. Clone this repository, run `npm ci`, then `npm start`.
+
+To build the app locally, run `npm run package`, then open `release/Folio-darwin-arm64/Folio.app`. The generated `release/` folder is excluded from Git; downloadable builds are attached to GitHub Releases.
 
 `npm test` runs filesystem fixture tests for scanning, duplicate handling, YAML metadata and durable storage. `npm run test:ui` launches Electron against temporary fixture roots and data to test browsing, escaped source display, favorites, notes, reviews and reload persistence. `npm run package` creates the Apple Silicon macOS app.
 
