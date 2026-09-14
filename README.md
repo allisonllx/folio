@@ -1,8 +1,8 @@
-<h1 align="center">Folio</h1>
-
 <p align="center">
   <img src="assets/icon.png" alt="Folio bookshelf logo" width="120" height="120">
 </p>
+
+<h1 align="center">Folio</h1>
 
 <p align="center">A cozy macOS bookshelf to rediscover your agent skills and keep what you learn beside them.</p>
 
